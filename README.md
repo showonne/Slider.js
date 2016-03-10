@@ -8,8 +8,8 @@ Need HTML structure
 
 ```
 <div class="Slider_container">
-  <div class="hide">
-      <div class="slider">
+  <div class="Slider_hide">
+      <div class="Slider">
           <img src="1.jpg" alt="">
           <img src="2.jpg" alt="">
           <img src="3.jpg" alt="">
@@ -27,7 +27,7 @@ And CSS Stylesheets:
     height: 80px;
     width: 100%;
 }
-.hide{
+.Slider_hide{
     position: relative;
     height: 100%;
     width: 100%;
@@ -35,13 +35,13 @@ And CSS Stylesheets:
 }
 
 //If options.navigation is true, custome the navigator style
-.slider_nav{
+.Slider_nav{
   position: absolute;
   right: 0;
   bottom: 5px;
   list-style: none;
 }
-.slider_nav li{
+.Slider_nav li{
     float: left;
     height: 10px;
     width: 10px;
@@ -51,7 +51,7 @@ And CSS Stylesheets:
     background: #0d897d;
     margin: 2px 5px;
 }
-.slider_nav li.current{
+.Slider_nav li.current{
     background: rgba(255, 255, 255, .4);
 }
 ```

@@ -1,6 +1,7 @@
 function Slider(options){
+    console.log(options)
 
-    if(Object.prototype.toString.call(options) !== "[object Object]"){
+    if(Object.prototype.toString.call(options) !== "[object Object]" && options !== undefined){
         throw new Error("Slider\'s options should be a object!")
     }
 

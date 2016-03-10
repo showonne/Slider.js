@@ -1,5 +1,4 @@
 function Slider(options){
-    console.log(options)
 
     if(Object.prototype.toString.call(options) !== "[object Object]" && options !== undefined){
         throw new Error("Slider\'s options should be a object!")
@@ -22,7 +21,7 @@ function Slider(options){
 
         container = document.querySelector('.Slider_container')
 
-        slider = document.querySelector('.slider')
+        slider = document.querySelector('.Slider')
 
         children = slider.children
 
@@ -64,9 +63,9 @@ function Slider(options){
 
         }
 
-        _nav.classList.add('slider_nav')
+        _nav.classList.add('Slider_nav')
 
-        document.querySelector('.hide').appendChild(_nav)
+        document.querySelector('.Slider_hide').appendChild(_nav)
 
         navs = Array.from(_nav.children)
 
@@ -102,8 +101,8 @@ function Slider(options){
             }
         }
 
-        _options.navigation && current && document.querySelector(`.slider_nav li[_target="${ current }"]`).classList.add('current')
-        _options.navigation && (current || document.querySelector(`.slider_nav li[_target="${ index }"]`).classList.add('current'))
+        _options.navigation && current && document.querySelector(`.Slider_nav li[_target="${ current }"]`).classList.add('current')
+        _options.navigation && (current || document.querySelector(`.Slider_nav li[_target="${ index }"]`).classList.add('current'))
 
     }
 

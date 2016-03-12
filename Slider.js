@@ -13,7 +13,7 @@ function Slider(options){
 
     var _options = Object.assign({}, defaults, options)
 
-    var index = 0;
+    var index = 0
 
     var container, slider, children, childrenCount, containerWidth, _nav, navs
 
@@ -35,9 +35,13 @@ function Slider(options){
 
         for(var item of Array.from(children)){
 
+            item.style.display = 'inline-block'
             item.style.width = `${ containerWidth }px`
             item.style.height = '100%'
             item.style.float = 'left'
+
+            item.children[0].style.width = '100%'
+            item.children[0].style.height = '100%'
 
         }
 
@@ -45,6 +49,18 @@ function Slider(options){
         slider.style.height = '100%'
         slider.style.transition = `all ${ _options.duration }ms ${ _options.animationType }`
         slider.style.position = 'relative'
+
+    }
+
+    function _repaint(){
+
+        containerWidth = container.offsetWidth
+
+        for(var item of Array.from(children)){
+
+            item.style.width = `${ containerWidth }px`
+
+        }
 
     }
 
@@ -118,14 +134,13 @@ function Slider(options){
 
     window.addEventListener('resize', function(){
 
-        _move(0)
-
         timeout && clearTimeout(timeout)
         interval && clearInterval(interval)
 
         timeout = setTimeout(function(){
 
-            _init()
+            _repaint()
+            _move(1)
 
             interval = setInterval(function(){
                 _move(1)

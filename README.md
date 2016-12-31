@@ -6,7 +6,7 @@ A Slider JavaScript Plugin.
 
 Need HTML structure
 
-```
+```html
 <div class="Slider_container">
   <div class="Slider_hide">
       <div class="Slider">
@@ -21,7 +21,7 @@ Need HTML structure
 
 And CSS Stylesheets:
 
-```
+```html
 //custom height and width
 .Slider_container{
     height: 80px;
